@@ -27,7 +27,7 @@ const Home = () => {
           <div className="project-card">
           <div className="photo">
             <div className="photo-overlay">
-             <img className="project-image" src="src/assets/screenshots/everyday/ss1.jpg" alt="Everyday.ai" />
+             <img className="project-image" src="../assets/screenshots/everyday/ss1.jpg" alt="Everyday.ai" />
             </div>
           </div>
           <div className="project-info">
@@ -47,7 +47,7 @@ const Home = () => {
           <div className="project-card">
             <div className="photo">
               <div className="photo-overlay">
-                <img className="project-image" src="src/assets/screenshots/card-flip.png" alt="Card Flip" />
+                <img className="project-image" src="../assets/screenshots/card-flip.png" alt="Card Flip" />
               </div>
             </div>
             <div className="project-info">
@@ -66,7 +66,7 @@ const Home = () => {
           <div className="project-card">
             <div className="photo">
               <div className="photo-overlay">
-                <img className="project-image" src="src/assets/screenshots/baccarat.png" alt="Everyday.ai" />
+                <img className="project-image" src="../assets/screenshots/baccarat.png" alt="Baccarat!" />
               </div>
             </div>
             <div className="project-info">
