@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 //For Navigation
 //For Screens
@@ -9,8 +8,6 @@ import Header from './components/Header'
 
 
 function App() {
-
-  const [currentPage, setCurrentPage] = useState<String>('profile');
 
   return (
     <div className="App">
