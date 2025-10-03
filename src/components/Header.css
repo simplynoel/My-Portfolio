@@ -1,0 +1,293 @@
+.app-header{
+    border-width: 100%;
+    height: 8vh;
+    background-color: #ffffffdd;
+    position: relative;
+    top: 0;
+    width: 100%;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: white;
+}
+
+.app-logo{
+    height: 150px;
+    margin-top: 5px;        
+    width: auto;
+    background-color: transparent;
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 5%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socials.showing {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.socials.hiding {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideOutRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+.connect-button{
+    margin: 0% 5% -1% 0%;
+    padding: 8px 16px;
+    background-color: #945bdf;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.connect-button.loading {
+    opacity: 0.7;
+    transform: scale(0.95);
+    cursor: not-allowed;
+    background-color: #7c3aed;
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+}
+
+/* Add the missing social-icon class styling */
+.social-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.socials.showing .social-icon {
+    animation-delay: calc(var(--index, 0) * 0.1s + 0.2s);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-icon a,
+.close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background: rgba(255, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+.socials-icon{
+    height: 30px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.socials-icon:hover{
+    filter: invert(59%) sepia(83%) saturate(7493%) hue-rotate(253deg) brightness(95%) contrast(101%);
+    transform: scale(1.2);
+}
+
+/* Tooltip Styles */
+.social-icon::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: rgba(33, 15, 56, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(148, 91, 223, 0.3);
+  box-shadow: 0 4px 15px rgba(33, 15, 56, 0.4);
+  z-index: 1001;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.social-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-2px);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(33, 15, 56, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+}
+
+.social-icon:hover::before,
+.social-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-icon:hover::before {
+  transform: translateX(-50%) translateY(80px);
+}
+
+.social-icon:hover::after {
+  transform: translateX(-50%) translateY(-6px);
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+    height: 10vh;
+  }
+  
+  .app-logo {
+    height: 150px;
+  }
+  
+  .socials {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    padding: 6px;
+  }
+  
+  .socials-icon {
+    height: 25px !important;
+  }
+  
+  .social-icon::before {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    height: 12vh;
+  }
+  
+  .app-logo {
+    height: 120px;
+  }
+  
+  .socials {
+    gap: 0.75rem;
+    padding: 3%;
+  }
+  
+  .social-icon {
+    padding: 4px;
+  }
+  
+  .socials-icon {
+    height: 20px !important;
+  }
+  
+  .social-icon::before {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+.social-icon:focus-within::before,
+.social-icon:focus-within::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-icon:focus-within::before {
+  transform: translateX(-50%) translateY(-12px);
+}
+
+.social-icon:focus-within::after {
+  transform: translateX(-50%) translateY(-6px);
+}

@@ -1,0 +1,35 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  --color-bg: #ffffff;
+  --color-text: rgba(236, 232, 232, 0.954);
+  --color-primary: #210f38;
+  --color-secondary: #945bdf;
+  --color-error: #cf6679;
+  --color-on-primary: #000000;
+  --color-on-secondary: #000000;
+  --color-on-error: #000000;
+  --color-on-surface: #ffffff;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
