@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css"
 //
-import { FaClosedCaptioning, FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaTimes } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Header = () => {
 
