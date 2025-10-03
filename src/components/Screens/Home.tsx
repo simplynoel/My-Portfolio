@@ -1,5 +1,8 @@
 import "./Home.css"
 import { FaBootstrap, FaCss3, FaGit,  FaHtml5, FaJava, FaJs, FaNodeJs, FaPhp, FaPython, FaReact } from 'react-icons/fa';
+import everydayImg from '../../assets/screenshots/everyday/ss1.jpg';
+import cardFlipImg from '../../assets/screenshots/card-flip.png';
+import baccaratImg from '../../assets/screenshots/baccarat.png';
 
 const Home = () => {
   return (
@@ -27,7 +30,7 @@ const Home = () => {
           <div className="project-card">
           <div className="photo">
             <div className="photo-overlay">
-             <img className="project-image" src="../assets/screenshots/everyday/ss1.jpg" alt="Everyday.ai" />
+             <img className="project-image" src={everydayImg} alt="Everyday.ai" />
             </div>
           </div>
           <div className="project-info">
@@ -47,7 +50,7 @@ const Home = () => {
           <div className="project-card">
             <div className="photo">
               <div className="photo-overlay">
-                <img className="project-image" src="../assets/screenshots/card-flip.png" alt="Card Flip" />
+                <img className="project-image" src={cardFlipImg} alt="Card Flip" />
               </div>
             </div>
             <div className="project-info">
@@ -66,7 +69,7 @@ const Home = () => {
           <div className="project-card">
             <div className="photo">
               <div className="photo-overlay">
-                <img className="project-image" src="../assets/screenshots/baccarat.png" alt="Baccarat!" />
+                <img className="project-image" src={baccaratImg} alt="Baccarat!" />
               </div>
             </div>
             <div className="project-info">

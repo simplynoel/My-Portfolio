@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css"
 //
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import eyeIcon from '../assets/eye.png';
+import logoIcon from '../assets/portfolio-logo-transparent.png';
 
 const Header = () => {
 
@@ -43,7 +45,7 @@ const Header = () => {
       tooltip: "Send me an email"
     },
     {
-      icon: <img className="socials-icon" src="src/assets/eye.png" alt="Resume" />,
+      icon: <img className="socials-icon" src={eyeIcon} alt="Resume" />,
       label: "Close",
       tooltip: "Hide",
       onClick: () => handleToggleConnect(false)
@@ -52,7 +54,7 @@ const Header = () => {
 
   return (
     <header className="app-header">
-        <img src="src\assets\portfolio-logo-transparent.png" alt="App Logo" className="app-logo" />
+        <img src={logoIcon} alt="App Logo" className="app-logo" />
         {
           showConnect ?
           <div className={`socials ${isAnimating ? 'hiding' : 'showing'}`}>
